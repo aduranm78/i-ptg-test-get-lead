@@ -35,17 +35,17 @@ public class MySpringBootRouter extends RouteBuilder {
     		});
     		// .continued(true); // Para continuar con la ruta
 		
-		rest()
+		/*rest()
 			.path("/").consumes("application/json").produces("application/json")
 				.get("/get-lead")
 		//          .type(Customer.class).outType(CustomerSuccess.class)
 				.to("direct:get-customer");
 
-		from("direct:get-customer")
+		from("direct:get-lead")
 				.setHeader("HTTP_METHOD", constant("GET"))
-				.to("direct:request");
+				.to("direct:request");*/
 
-		from("direct:request")
+		from("direct:get-lead")
         	.setHeader(Exchange.HTTP_URI, constant(erpUri))
 			.setHeader("CamelHttpMethod", constant("GET"))
         	.process(new Processor() {
