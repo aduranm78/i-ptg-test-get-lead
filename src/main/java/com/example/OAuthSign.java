@@ -27,7 +27,7 @@ public class OAuthSign {
 	    consumer.setMessageSigner(new HmacSha256MessageSigner());
 	    consumer.setTokenWithSecret(access_token, access_secret);
 	    
-	    HttpPost httpget= new HttpGet(uri);
+	    HttpGet httpget= new HttpGet(uri);
 	    
 	    try {
 	        HttpRequest signedReq = consumer.sign(httpget);
