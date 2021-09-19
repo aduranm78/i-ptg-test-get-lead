@@ -30,7 +30,7 @@ public class MySpringBootRouter extends RouteBuilder {
     	onException(HttpOperationFailedException.class)
     		.handled(true)
     		.process(exchange -> {
-    			System.out.println("No se puedo conectar");
+    			System.out.println("No se pudo llamar la interfaz");
     			System.out.println(exchange.getProperties());
     		});
     		// .continued(true); // Para continuar con la ruta
